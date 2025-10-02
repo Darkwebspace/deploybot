@@ -6,7 +6,7 @@ import json
 import os
 from const import RAILWAY_PUBLIC_URL, USER_DATA_FILE
 
-logger = logging.getLogger(name)
+logger = logging.getLogger(__name__)
 
 class ZPhisherManager:
     def init(self):
