@@ -8,4 +8,4 @@ CLOUDFLARE_TUNNEL_TIMEOUT = 300  # 5 minutes
 
 # File paths
 USER_DATA_FILE = "users_data.json"
-RAILWAY_PUBLIC_URL = "https://
+RAILWAY_PUBLIC_URL = "https://deploybot-production.up.railway.app"
