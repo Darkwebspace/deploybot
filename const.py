@@ -1,7 +1,7 @@
 # Bot configuration
-BOT_TOKEN = "8097119137:AAHcuFafFUbb73sZ8YwS2i7JuQW1IgimhRI"
+BOT_TOKEN = "I"
 
-ADMIN_ID = 8275003629
+ADMIN_ID = 
 # ZPhisher configuration
 ZPHISHER_PATH = "./zphisher"  # Path to zphisher directory
 CLOUDFLARE_TUNNEL_TIMEOUT = 300  # 5 minutes
